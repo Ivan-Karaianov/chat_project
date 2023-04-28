@@ -3,5 +3,5 @@ test(' 1-1 ', () => {
 })
 
 test(' 2-1', () => {
-  expect(2 - 1).toBe(1)
+  expect(2 - 1).toBe(21)
 })
