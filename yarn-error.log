@@ -1,0 +1,43 @@
+Arguments: 
+  /Users/usui/.nvm/versions/node/v16.10.0/bin/node /opt/homebrew/Cellar/yarn/1.22.17_2/libexec/bin/yarn.js add jest
+
+PATH: 
+  /Users/usui/.rvm/gems/ruby-2.7.5/bin:/Users/usui/.rvm/gems/ruby-2.7.5@global/bin:/Users/usui/.rvm/rubies/ruby-2.7.5/bin:/Users/usui/.nvm/versions/node/v16.10.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/usui/.rvm/gems/ruby-2.7.5/bin:/Users/usui/.rvm/gems/ruby-2.7.5@global/bin:/Users/usui/.rvm/rubies/ruby-2.7.5/bin:/Users/usui/opt/anaconda3/bin:/Users/usui/opt/anaconda3/condabin:/Users/usui/.nvm/versions/node/v16.10.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/usui/.rvm/bin:/Users/usui/.rvm/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.10.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: test:unit: Invalid protocol: test:
+      at Request.module.exports.Request.init (/opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:141152:31)
+      at new Request (/opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:140825:8)
+      at request (/opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:137731:10)
+      at RequestManager.execute (/opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:67081:15)
+      at RequestManager.shiftQueue (/opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:67119:10)
+      at /opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:66788:13
+      at new Promise (<anonymous>)
+      at new F (/opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:5301:28)
+      at RequestManager.request (/opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:66786:19)
+      at NpmRegistry.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:31747:42)
+
+npm manifest: 
+  {
+    "dependencies": {
+      "body-parser": "^1.20.2",
+      "cors": "^2.8.5",
+      "express": "^4.18.2",
+      "test:unit": "jest --testPathPattern=tests"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
