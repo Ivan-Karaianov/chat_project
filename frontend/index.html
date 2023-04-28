@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Chat</title>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form>
+      <input type="text" id="author" placeholder="Your name">
+      <input type="text" id="content" placeholder="Your message">
+      <button type="submit">Send</button>
+    </form>
+    
+   
+  </body>
+</html>
+<script>
+  const messagesUl = document.getElementById('messages');
+  let lastIndex =  0;
+  
+  function getMessages() {
+    fetch(`http://localhost:3000/messages?lastIndex=${lastIndex}`)
+      .then(response => response.json())
+      .then(messages => {
+        messages.forEach(message => {
+          const li = document.createElement('li');
+          li.textContent = `${message.author}: ${message.content}`;
+          messagesUl.appendChild(li);
+        })
+        const messagesUl = document.getElementById('messages');
+
+        if (messages > 0) {
+          lastIndex =  messagesUl.length-1 ;
+        }
+      });
+  }
+  
+  getMessages();
+  setInterval(getMessages, 1000);
+  
+  const form = document.querySelector('form');
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const author = document.getElementById('author').value;
+    const content = document.getElementById('content').value;
+    
+    fetch('http://localhost:3000/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ author, content })
+    })
+      .then(() => {
+        document.getElementById('content').value = '';
+        getMessages();
+      });
+  });
+</script>
