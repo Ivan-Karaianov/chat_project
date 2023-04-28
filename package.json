@@ -2,7 +2,7 @@
 
   "scripts": {
     "test": "jest",
-    "build": "npm install"
+    "build": "yarn"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
