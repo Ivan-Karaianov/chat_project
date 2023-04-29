@@ -14,7 +14,7 @@
   </body>
 </html>
 <script>
-  const messagesUl = document.getElementById('messages');
+          var messagesUl = document.getElementById('messages');
   let lastIndex =  0;
   
   function getMessages() {
@@ -26,7 +26,7 @@
           li.textContent = `${message.author}: ${message.content}`;
           messagesUl.appendChild(li);
         })
-        const messagesUl = document.getElementById('messages');
+        messagesUl = document.getElementById('messages');
 
         if (messages > 0) {
           lastIndex =  messagesUl.length-1 ;
