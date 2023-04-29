@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors')
+const cors = require('cors');
+const fs = require('fs');
 const app = express();
 const PORT = 3000;
 
@@ -29,5 +30,11 @@ app.post('/messages', (req, res) => {
 const server = app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
+
+app.get('/', (req, res) => {
+  fs.readFile(__dirname + '/frontend/index.html', 'utf8', function (err, text) {
+    res.send(text);
+  });
+})
 
 server.setTimeout(5000);
